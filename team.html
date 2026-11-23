@@ -3,45 +3,98 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Our team | StudySpace</title>
+    <title>Meet the Team | StudySpace</title>
     <link rel="icon" href="images/logo.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="visually-hidden-focusable skip-link" href="#main"
-      >Skip to content</a
-    >
+    <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a>
     <div class="site-layout">
       <aside class="sidebar">
         <a class="site-brand" href="home.html">
-          <img src="images/logo.png" width="54" height="54" alt="" />
+          <span class="brand-mark"><img src="images/logo.png" width="54" height="54" alt="" /></span>
           <span>StudySpace</span>
         </a>
         <nav class="nav flex-column" aria-label="Main navigation">
-          <a class="nav-link" href="home.html">Home</a>
-          <a class="nav-link" href="dashboard.html">Dashboard</a>
-          <a class="nav-link" href="index.html">Focus timer</a>
-          <a class="nav-link" href="todo.html">To-do list</a>
-          <a class="nav-link" href="reminders.html">Reminders</a>
-          <a class="nav-link" href="session-history.html">Session history</a>
-          <a class="nav-link active" aria-current="page" href="team.html"
-            >Our team</a
-          >
-          <a class="nav-link" href="study-tips.html">Study tips</a>
-          <a class="nav-link" href="reviews.html">Reviews</a>
-          <a class="nav-link" href="contact.html">Contact us</a>
+          <a class="nav-link" href="home.html">
+            <i class="bi bi-house-door" aria-hidden="true"></i>Home
+          </a>
+          <a class="nav-link" href="dashboard.html">
+            <i class="bi bi-grid" aria-hidden="true"></i>Dashboard
+          </a>
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-stopwatch" aria-hidden="true"></i>Focus timer
+          </a>
+          <a class="nav-link" href="todo.html">
+            <i class="bi bi-check-square" aria-hidden="true"></i>To-do list
+          </a>
+          <a class="nav-link" href="reminders.html">
+            <i class="bi bi-bell" aria-hidden="true"></i>Reminders
+          </a>
+          <a class="nav-link" href="session-history.html">
+            <i class="bi bi-bar-chart" aria-hidden="true"></i>Session history
+          </a>
+          <a class="nav-link active" aria-current="page" href="team.html">
+            <i class="bi bi-people" aria-hidden="true"></i>Our team
+          </a>
+          <a class="nav-link" href="study-tips.html">
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>Study tips
+          </a>
+          <a class="nav-link" href="reviews.html">
+            <i class="bi bi-star" aria-hidden="true"></i>Reviews
+          </a>
+          <a class="nav-link" href="contact.html">
+            <i class="bi bi-envelope" aria-hidden="true"></i>Contact us
+          </a>
         </nav>
       </aside>
       <main id="main" class="container-fluid workspace">
         <header class="page-heading">
-          <h1>Meet our team</h1>
+          <h1>Meet the Team</h1>
+          <p>We’re the student developers behind StudySpace.</p>
         </header>
-        <section class="panel team-panel" aria-label="Team members">
-          <ul class="list-unstyled item-list mb-0">
-            <li class="list-row">Antonina Brychcy</li>
-            <li class="list-row">Conor McCarthy</li>
-            <li class="list-row">William Downey</li>
-          </ul>
+
+        <img
+          class="team-photo"
+          src="images/team.png"
+          alt="Antonina Brychcy, William Downey, and Conor McCarthy, the StudySpace team"
+          width="1672"
+          height="941"
+        />
+
+        <section class="team-profiles" aria-label="The people behind StudySpace">
+          <div class="row row-cols-1 row-cols-lg-3 gx-3 gx-xl-4 gy-3">
+          <div class="col">
+            <details class="panel team-profile h-100">
+              <summary>
+                <span class="team-name">Conor McCarthy</span>
+                <span class="team-role">Analytics &amp; Progress Tracking</span>
+              </summary>
+              <p class="small fw-semibold mt-3 mb-1">Co-founder</p>
+              <p class="mb-0">Conor oversees how StudySpace presents study activity and progress. He developed the dashboard and session history, giving students a clear view of their study time and a record of their past focus sessions.</p>
+            </details>
+          </div>
+          <div class="col">
+            <details class="panel team-profile h-100">
+              <summary>
+                <span class="team-name">William Downey</span>
+                <span class="team-role">Account Experience &amp; User Support</span>
+              </summary>
+              <p class="small fw-semibold mt-3 mb-1">Co-founder</p>
+              <p class="mb-0">William oversees the account experience and user support at StudySpace. He developed the login, sign-up, and settings pages, as well as the Contact Us and Help page, so students can manage their accounts and access support in one place.</p>
+            </details>
+          </div>
+          <div class="col">
+            <details class="panel team-profile h-100">
+              <summary>
+                <span class="team-name">Antonina Brychcy</span>
+                <span class="team-role">Product Design &amp; Front-End Development</span>
+              </summary>
+              <p class="small fw-semibold mt-3 mb-1">Co-founder</p>
+              <p class="mb-0">Antonina oversees the design of StudySpace’s homepage and team page. She developed the homepage around the tools students use most and created the team page to introduce the people behind the platform.</p>
+            </details>
+          </div>
+          </div>
         </section>
       </main>
     </div>
