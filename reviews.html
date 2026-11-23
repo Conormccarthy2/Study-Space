@@ -1,106 +1,62 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reviews - StudySpace</title>
-    <link rel="icon" href="images/logo.png" type="image/png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
   </head>
-  <body>
-    <a class="visually-hidden-focusable skip-link" href="#main"
-      >Skip to content</a
-    >
-    <div class="site-layout">
-      <aside class="sidebar">
-        <a class="site-brand" href="home.html">
-          <span class="brand-mark"><img src="images/logo.png" width="54" height="54" alt="" /></span>
-          <span>StudySpace</span>
-        </a>
-        <nav class="nav flex-column" aria-label="Main navigation">
-          <a class="nav-link" href="home.html">
-            <i class="bi bi-house-door" aria-hidden="true"></i>Home
-          </a>
-          <a class="nav-link" href="dashboard.html">
-            <i class="bi bi-grid" aria-hidden="true"></i>Dashboard
-          </a>
-          <a class="nav-link" href="index.html">
-            <i class="bi bi-stopwatch" aria-hidden="true"></i>Focus timer
-          </a>
-          <a class="nav-link" href="todo.html">
-            <i class="bi bi-check-square" aria-hidden="true"></i>To-do list
-          </a>
-          <a class="nav-link" href="reminders.html">
-            <i class="bi bi-bell" aria-hidden="true"></i>Reminders
-          </a>
-          <a class="nav-link" href="session-history.html">
-            <i class="bi bi-bar-chart" aria-hidden="true"></i>Session history
-          </a>
-          <a class="nav-link" href="team.html">
-            <i class="bi bi-people" aria-hidden="true"></i>Our team
-          </a>
-          <a class="nav-link" href="study-tips.html">
-            <i class="bi bi-lightbulb" aria-hidden="true"></i>Study tips
-          </a>
-          <a class="nav-link active" aria-current="page" href="reviews.html">
-            <i class="bi bi-star" aria-hidden="true"></i>Reviews
-          </a>
-          <a class="nav-link" href="contact.html">
-            <i class="bi bi-envelope" aria-hidden="true"></i>Contact us
-          </a>
-        </nav>
-      </aside>
-      <main id="main" class="container-fluid workspace">
-        <header class="page-heading">
-          <h1>StudySpace Reviews</h1>
-          <p>Reviews From Our Users</p>
-        </header>
-
-        <article class="panel mb-3">
+  <body class="content-page">
+    <a href="#main">Skip to content</a>
+    <nav class="menu" aria-label="Site navigation">
+      <button id="toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="links">+</button>
+      <div id="links" inert>
+        <a href="home.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html">Focus timer</a>
+        <a href="todo.html">To-do list</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="session-history.html">Session history</a>
+        <a href="team.html">Our team</a>
+        <a href="study-tips.html">Study tips</a>
+        <a aria-current="page" href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact us</a>
+      </div>
+    </nav>
+    <main id="main">
+      <h1>StudySpace Reviews</h1>
+      <p>Reviews From Our Users</p>
+      <div class="card-grid">
+        <article class="session-card">
           <h2>Help Me To Concentrate and Stay Focused</h2>
           <p><strong>Aoife Conolly</strong> · 5 out of 5 stars</p>
-          <blockquote class="mb-0">
-            <p class="mb-0">
-              I used the study timer to help me study for my maths test, having
-              a set time for my breaks really helped.
-            </p>
+          <blockquote>
+            <p>I used the study timer to help me study for my maths test, having a set time for my breaks really helped.</p>
           </blockquote>
         </article>
-
-        <article class="panel mb-3">
+        <article class="session-card">
           <h2>Made My Assignments feel more manageable</h2>
           <p><strong>Jamie Mote</strong> · 4 out of 5 stars</p>
-          <blockquote class="mb-0">
-            <p class="mb-0">
-              It helped me break my tasks down into smaller tasks. I'd also like
-              a way to sort tasks by subject.
-            </p>
+          <blockquote>
+            <p>It helped me break my tasks down into smaller tasks. I'd also like a way to sort tasks by subject.</p>
           </blockquote>
         </article>
-
-        <article class="panel mb-3">
+        <article class="session-card">
           <h2>My deadlines are in one place</h2>
           <p><strong>Sam McCarthy</strong> · 5 out of 5 stars</p>
-          <blockquote class="mb-0">
-            <p class="mb-0">
-              I set reminders for my lab report and group presentations and I
-              could see both deadlines when I opened the reminders page, this
-              really helped me stay on top of my work.
-            </p>
+          <blockquote>
+            <p>I set reminders for my lab report and group presentations and I could see both deadlines when I opened the reminders page, this really helped me stay on top of my work.</p>
           </blockquote>
         </article>
-
-        <article class="panel mb-3">
+        <article class="session-card">
           <h2>Helps me practice questions</h2>
           <p><strong>John Jones</strong> · 3.5 out of 5 stars</p>
-          <blockquote class="mb-0">
-            <p class="mb-0">
-              I use the timer to practice questions, when the timer goes off, I
-              take a break and come back to check my answers after my break.
-            </p>
+          <blockquote>
+            <p>I use the timer to practice questions, when the timer goes off, I take a break and come back to check my answers after my break.</p>
           </blockquote>
         </article>
-      </main>
-    </div>
+      </div>
+    </main>
   </body>
 </html>

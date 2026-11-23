@@ -1,95 +1,44 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>To-do list | StudySpace</title>
-    <link rel="icon" href="images/logo.png" type="image/png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
   </head>
   <body data-page="todo">
-    <a class="visually-hidden-focusable skip-link" href="#main"
-      >Skip to content</a
-    >
-    <div class="site-layout">
-      <aside class="sidebar">
-        <a class="site-brand" href="home.html">
-          <span class="brand-mark"><img src="images/logo.png" width="54" height="54" alt="" /></span>
-          <span>StudySpace</span>
-        </a>
-        <nav class="nav flex-column" aria-label="Main navigation">
-          <a class="nav-link" href="home.html">
-            <i class="bi bi-house-door" aria-hidden="true"></i>Home
-          </a>
-          <a class="nav-link" href="dashboard.html">
-            <i class="bi bi-grid" aria-hidden="true"></i>Dashboard
-          </a>
-          <a class="nav-link" href="index.html">
-            <i class="bi bi-stopwatch" aria-hidden="true"></i>Focus timer
-          </a>
-          <a class="nav-link active" aria-current="page" href="todo.html">
-            <i class="bi bi-check-square" aria-hidden="true"></i>To-do list
-          </a>
-          <a class="nav-link" href="reminders.html">
-            <i class="bi bi-bell" aria-hidden="true"></i>Reminders
-          </a>
-          <a class="nav-link" href="session-history.html">
-            <i class="bi bi-bar-chart" aria-hidden="true"></i>Session history
-          </a>
-          <a class="nav-link" href="team.html">
-            <i class="bi bi-people" aria-hidden="true"></i>Our team
-          </a>
-          <a class="nav-link" href="study-tips.html">
-            <i class="bi bi-lightbulb" aria-hidden="true"></i>Study tips
-          </a>
-          <a class="nav-link" href="reviews.html">
-            <i class="bi bi-star" aria-hidden="true"></i>Reviews
-          </a>
-          <a class="nav-link" href="contact.html">
-            <i class="bi bi-envelope" aria-hidden="true"></i>Contact us
-          </a>
-        </nav>
-      </aside>
-      <main id="main" class="container-fluid workspace">
-        <header class="page-heading">
-          <h1>To-do list</h1>
-          <p>Capture what you need to do and check off tasks as you finish.</p>
+    <a href="#main">Skip to content</a>
+    <nav class="menu" aria-label="Site navigation">
+      <button id="toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="links">+</button>
+      <div id="links" inert>
+        <a href="home.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html">Focus timer</a>
+        <a aria-current="page" href="todo.html">To-do list</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="session-history.html">Session history</a>
+        <a href="team.html">Our team</a>
+        <a href="study-tips.html">Study tips</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact us</a>
+      </div>
+    </nav>
+    <main id="main">
+      <h1>To-do list</h1>
+      <section class="session-card task-card" aria-labelledby="tasks-heading">
+        <form id="task-form">
+          <label for="task-input">New task</label>
+          <input id="task-input" type="text" placeholder="e.g. Review lecture notes" required>
+          <button type="submit">Add task</button>
+        </form>
+        <header>
+          <h2 id="tasks-heading">Your tasks</h2>
+          <p id="task-count" aria-live="polite">0 of 0 done</p>
         </header>
-        <section class="panel">
-          <form id="task-form" class="row g-2 align-items-end mb-4">
-            <div class="col-12 col-md">
-              <label class="form-label" for="task-input">New task</label>
-              <input
-                class="form-control"
-                id="task-input"
-                type="text"
-                placeholder="e.g. Review lecture notes"
-                required
-              />
-            </div>
-            <div class="col-12 col-md-auto">
-              <button class="btn btn-primary" type="submit">Add task</button>
-            </div>
-          </form>
-          <div
-            class="list-heading d-flex justify-content-between align-items-baseline flex-wrap gap-2"
-          >
-            <h2>Your tasks</h2>
-            <p
-              id="task-count"
-              class="small text-body-secondary mb-0"
-              aria-live="polite"
-            >
-              0 of 0 done
-            </p>
-          </div>
-          <ul id="task-list" class="item-list list-unstyled mb-0"></ul>
-          <p id="task-empty" class="empty-state mb-0">
-            No tasks yet. Add your first task above.
-          </p>
-        </section>
-      </main>
-    </div>
+        <ul id="task-list"></ul>
+        <p id="task-empty">No tasks yet. Add your first task above.</p>
+      </section>
+    </main>
   </body>
 </html>

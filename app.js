@@ -575,3 +575,31 @@
   pages[document.body.dataset.page]?.();
   initDashboardStats();
 })();
+
+//navbar//
+(() => {
+  const toggle = document.querySelector(".menu #toggle");
+  const links = document.querySelector(".menu #links");
+  if (!toggle || !links) return;
+
+  const pages = links.querySelectorAll("a");
+  pages.forEach((page, index) => {
+    const angle = -180 + index * 180 / (pages.length - 1);
+    page.style.setProperty("--desktop-angle", angle + "deg");
+    page.style.setProperty("--mobile-angle", (-180 + (index % 5) * 45) + "deg");
+  });
+
+  function setOpen(open) {
+    links.inert = !open;
+    toggle.textContent = open ? "×" : "+";
+    toggle.setAttribute("aria-expanded", String(open));
+  }
+
+  toggle.addEventListener("click", () => setOpen(links.inert));
+  links.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+})();

@@ -1,115 +1,60 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Study Tips - StudySpace</title>
-    <link rel="icon" href="images/logo.png" type="image/png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
   </head>
-  <body>
-    <a class="visually-hidden-focusable skip-link" href="#main"
-      >Skip to content</a
-    >
-    <div class="site-layout">
-      <aside class="sidebar">
-        <a class="site-brand" href="home.html">
-          <span class="brand-mark"><img src="images/logo.png" width="54" height="54" alt="" /></span>
-          <span>StudySpace</span>
-        </a>
-        <nav class="nav flex-column" aria-label="Main navigation">
-          <a class="nav-link" href="home.html">
-            <i class="bi bi-house-door" aria-hidden="true"></i>Home
-          </a>
-          <a class="nav-link" href="dashboard.html">
-            <i class="bi bi-grid" aria-hidden="true"></i>Dashboard
-          </a>
-          <a class="nav-link" href="index.html">
-            <i class="bi bi-stopwatch" aria-hidden="true"></i>Focus timer
-          </a>
-          <a class="nav-link" href="todo.html">
-            <i class="bi bi-check-square" aria-hidden="true"></i>To-do list
-          </a>
-          <a class="nav-link" href="reminders.html">
-            <i class="bi bi-bell" aria-hidden="true"></i>Reminders
-          </a>
-          <a class="nav-link" href="session-history.html">
-            <i class="bi bi-bar-chart" aria-hidden="true"></i>Session history
-          </a>
-          <a class="nav-link" href="team.html">
-            <i class="bi bi-people" aria-hidden="true"></i>Our team
-          </a>
-          <a class="nav-link active" aria-current="page" href="study-tips.html">
-            <i class="bi bi-lightbulb" aria-hidden="true"></i>Study tips
-          </a>
-          <a class="nav-link" href="reviews.html">
-            <i class="bi bi-star" aria-hidden="true"></i>Reviews
-          </a>
-          <a class="nav-link" href="contact.html">
-            <i class="bi bi-envelope" aria-hidden="true"></i>Contact us
-          </a>
-        </nav>
-      </aside>
-      <main id="main" class="container-fluid workspace">
-        <header class="page-heading">
-          <h1>Our Study Advice and Tips</h1>
-          <p>Try one of these tips in your next study session!</p>
-        </header>
-
-        <section class="panel mb-3">
+  <body class="content-page">
+    <a href="#main">Skip to content</a>
+    <nav class="menu" aria-label="Site navigation">
+      <button id="toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="links">+</button>
+      <div id="links" inert>
+        <a href="home.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html">Focus timer</a>
+        <a href="todo.html">To-do list</a>
+        <a href="reminders.html">Reminders</a>
+        <a href="session-history.html">Session history</a>
+        <a href="team.html">Our team</a>
+        <a aria-current="page" href="study-tips.html">Study tips</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact us</a>
+      </div>
+    </nav>
+    <main id="main">
+      <h1>Our Study Advice and Tips</h1>
+      <p>Try one of these tips in your next study session!</p>
+      <div class="card-grid">
+        <section class="session-card">
           <h2>Firstly, Plan Your Session!</h2>
-
-          <details class="border-top py-2">
-            <summary class="fw-semibold">Set one clear goal</summary>
-            <p class="mt-2 mb-0">
-              Pick something you can finish in one session, like answering five
-              practice questions or outlining one section of an essay.
-            </p>
+          <details>
+            <summary>Set one clear goal</summary>
+            <p>Pick something you can finish in one session, like answering five practice questions or outlining one section of an essay.</p>
           </details>
-
-          <details class="border-top py-2">
-            <summary class="fw-semibold">Study in short blocks</summary>
-            <p class="mt-2 mb-0">
-              Try 20 minutes on one task, followed by a five-minute break. Keep
-              electronic devices out of sight.
-            </p>
+          <details>
+            <summary>Study in short blocks</summary>
+            <p>Try 20 minutes on one task, followed by a five-minute break. Keep electronic devices out of sight.</p>
           </details>
         </section>
-
-        <section class="panel mb-3">
+        <section class="session-card">
           <h2>How To Revise What You Have Learned</h2>
-
-          <details class="border-top py-2">
-            <summary class="fw-semibold">Test yourself from memory</summary>
-            <p class="mt-2 mb-0">
-              Close your notes and write down the things you remember, Check
-              them against your notes and turn anything you missed into a
-              practice question.
-            </p>
+          <details>
+            <summary>Test yourself from memory</summary>
+            <p>Close your notes and write down the things you remember, Check them against your notes and turn anything you missed into a practice question.</p>
           </details>
-
-          <details class="border-top py-2">
-            <summary class="fw-semibold">
-              Spread revision across several days
-            </summary>
-            <p class="mt-2 mb-0">
-              Set a reminder to revisit the topic tomorrow and again later in
-              the week. Start each review by answering a few questions from
-              memory.
-            </p>
+          <details>
+            <summary>Spread revision across several days</summary>
+            <p>Set a reminder to revisit the topic tomorrow and again later in the week. Start each review by answering a few questions from memory.</p>
           </details>
-
-          <details class="border-top py-2">
-            <summary class="fw-semibold">
-              Practise with past exam questions
-            </summary>
-            <p class="mt-2 mb-0">
-              Answer questions under a time limit. Check the marking scheme and
-              add one thing to improve to your to-do list.
-            </p>
+          <details>
+            <summary>Practise with past exam questions</summary>
+            <p>Answer questions under a time limit. Check the marking scheme and add one thing to improve to your to-do list.</p>
           </details>
         </section>
-      </main>
-    </div>
+      </div>
+    </main>
   </body>
 </html>
