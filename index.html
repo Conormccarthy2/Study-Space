@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Focus timer | StudySpace</title>
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body data-page="pomodoro">
+    <a class="visually-hidden-focusable skip-link" href="#main"
+      >Skip to content</a
+    >
+    <div class="site-layout">
+      <aside class="sidebar">
+        <a class="site-brand" href="home.html">
+          <img src="images/logo.png" width="54" height="54" alt="" />
+          <span>StudySpace</span>
+        </a>
+        <nav class="nav flex-column" aria-label="Main navigation">
+          <a class="nav-link" href="home.html">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.html"
+            >Focus timer</a
+          >
+          <a class="nav-link" href="dashboard.html">Dashboard</a>
+          <a class="nav-link" href="todo.html">To-do list</a>
+          <a class="nav-link" href="reminders.html">Reminders</a>
+          <a class="nav-link" href="session-history.html">Session history</a>
+          <a class="nav-link" href="team.html">Our team</a>
+          <a class="nav-link" href="study-tips.html">Study tips</a>
+          <a class="nav-link" href="reviews.html">Reviews</a>
+          <a class="nav-link" href="contact.html">Contact us</a>
+        </nav>
+      </aside>
+      <main id="main" class="container-fluid workspace">
+        <header class="page-heading">
+          <h1>Focus timer</h1>
+          <p>Work in focused sessions with a short break in between.</p>
+        </header>
+        <div class="row g-3 g-xl-4">
+          <div class="col-12 col-xl-8">
+            <section
+              class="panel timer-panel h-100"
+              aria-label="Pomodoro timer"
+            >
+              <div
+                class="d-flex flex-wrap justify-content-between align-items-center gap-2"
+              >
+                <span id="session" class="session-label" aria-live="polite"
+                  >Work session</span
+                >
+                <button
+                  id="settings-button"
+                  class="btn btn-sm btn-outline-secondary"
+                  type="button"
+                >
+                  Settings
+                </button>
+              </div>
+              <div class="timer-readout">
+                <span id="timer" role="timer" aria-label="Time remaining"
+                  >20:00</span
+                >
+                <span id="timer-status">Ready to start</span>
+              </div>
+              <div class="d-flex justify-content-center flex-wrap gap-2">
+                <button id="start" class="btn btn-primary" type="button">
+                  Start
+                </button>
+                <button id="pause" class="btn btn-primary" type="button" hidden>
+                  Pause
+                </button>
+                <button
+                  id="reset"
+                  class="btn btn-outline-secondary"
+                  type="button"
+                >
+                  Reset
+                </button>
+              </div>
+            </section>
+          </div>
+          <div class="col-12 col-xl-4">
+            <section class="panel h-100" aria-labelledby="cycle-heading">
+              <h2 id="cycle-heading">Session cycle</h2>
+              <p
+                id="completed-sessions"
+                class="stat-number mb-0"
+                aria-live="polite"
+              >
+                0
+              </p>
+              <p class="text-body-secondary">Work sessions completed</p>
+              <dl class="durations mb-3">
+                <div>
+                  <dt>Work</dt>
+                  <dd id="work-duration">20 min</dd>
+                </div>
+                <div>
+                  <dt>Short break</dt>
+                  <dd id="short-duration">3 min</dd>
+                </div>
+                <div>
+                  <dt>Long break</dt>
+                  <dd id="long-duration">5 min</dd>
+                </div>
+              </dl>
+              <p class="small text-body-secondary mb-0">
+                A long break follows every fourth work session.
+              </p>
+            </section>
+          </div>
+        </div>
+        <dialog id="settings-dialog" aria-labelledby="settings-heading">
+          <form id="settings-form">
+            <h2 id="settings-heading">Session lengths</h2>
+            <p class="text-body-secondary">
+              Saving resets the current session to its new duration.
+            </p>
+            <label class="form-label" for="settings-work">Work (minutes)</label>
+            <input
+              id="settings-work"
+              class="form-control mb-3"
+              name="work"
+              type="number"
+              min="1"
+              max="1440"
+              required
+            />
+            <label class="form-label" for="settings-short"
+              >Short break (minutes)</label
+            >
+            <input
+              id="settings-short"
+              class="form-control mb-3"
+              name="short"
+              type="number"
+              min="1"
+              max="1440"
+              required
+            />
+            <label class="form-label" for="settings-long"
+              >Long break (minutes)</label
+            >
+            <input
+              id="settings-long"
+              class="form-control mb-4"
+              name="long"
+              type="number"
+              min="1"
+              max="1440"
+              required
+            />
+            <div class="d-flex justify-content-end flex-wrap gap-2">
+              <button
+                id="close-settings"
+                class="btn btn-outline-secondary"
+                type="button"
+              >
+                Cancel
+              </button>
+              <button class="btn btn-primary" type="submit">
+                Save settings
+              </button>
+            </div>
+          </form>
+        </dialog>
+      </main>
+    </div>
+  </body>
+</html>

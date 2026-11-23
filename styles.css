@@ -1,0 +1,184 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css")
+layer(bootstrap);
+
+:root {
+  --lime: #d4f500;
+  --dark: #141510;
+  --border: #dfe2d7;
+  --bs-body-bg: #f6f7f1;
+  --bs-body-color: var(--dark);
+  --bs-link-color-rgb: 65, 82, 0;
+}
+
+.site-layout {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+  padding: 1rem;
+  background: var(--dark);
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.sidebar a {
+  color: white;
+}
+.sidebar a:hover {
+  color: var(--lime);
+}
+.sidebar .nav-link.active {
+  background: var(--lime);
+  color: var(--dark);
+  border-radius: 0.25rem;
+}
+
+.skip-link:focus {
+  position: fixed;
+  z-index: 10;
+  padding: 0.5rem;
+  background: white;
+}
+
+.workspace {
+  max-width: 72rem;
+  padding: clamp(1rem, 5vw, 4rem);
+}
+
+.page-heading {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-heading p,
+.empty-state,
+.reminder-meta,
+.stat-unit,
+#timer-status {
+  color: var(--bs-secondary-color);
+}
+
+.panel,
+#settings-dialog {
+  padding: 1.25rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}
+
+h2,
+.stat-card h3 {
+  font-size: 1.125rem;
+}
+.home-panel,
+.team-panel {
+  max-width: 40rem;
+}
+.quick-links li {
+  padding: 0.35rem 0;
+}
+.timer-panel {
+  background: #fbfcef;
+}
+.timer-readout {
+  margin: 2rem 0;
+  text-align: center;
+}
+#timer,
+.stat-number {
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+}
+#timer {
+  display: block;
+  font-size: clamp(2rem, 7vw, 5rem);
+  line-height: 1.1;
+}
+.stat-number {
+  font-size: 2rem;
+}
+.stat-unit {
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  --bs-btn-color: var(--dark);
+  --bs-btn-bg: var(--lime);
+  --bs-btn-border-color: var(--lime);
+  --bs-btn-hover-color: var(--dark);
+  --bs-btn-hover-bg: #bfda00;
+  --bs-btn-hover-border-color: #bfda00;
+}
+
+.list-row,
+.durations > div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  overflow-wrap: anywhere;
+}
+
+.durations dd {
+  margin: 0;
+}
+.task-label input {
+  margin-right: 0.5rem;
+}
+.task-label input:checked + span {
+  text-decoration: line-through;
+}
+.reminder-meta,
+.due-status {
+  font-size: 0.875rem;
+}
+.due-status {
+  margin-left: 0.5rem;
+}
+.remove {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+}
+
+#settings-dialog {
+  width: min(25rem, calc(100% - 2rem));
+}
+#settings-dialog::backdrop {
+  background: #0008;
+}
+
+@media (max-width: 767px) {
+  .site-layout {
+    grid-template-columns: 7rem minmax(0, 1fr);
+  }
+  .sidebar {
+    padding: 0.5rem;
+  }
+  .site-brand {
+    flex-direction: column;
+  }
+  .sidebar a {
+    font-size: 0.8rem;
+  }
+  .sidebar .nav-link {
+    padding: 0.5rem;
+  }
+  .panel {
+    padding: 0.85rem;
+  }
+}

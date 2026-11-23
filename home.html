@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home | StudySpace</title>
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="visually-hidden-focusable skip-link" href="#main"
+      >Skip to content</a
+    >
+    <div class="site-layout">
+      <aside class="sidebar">
+        <a class="site-brand" href="home.html">
+          <img src="images/logo.png" width="54" height="54" alt="" />
+          <span>StudySpace</span>
+        </a>
+        <nav class="nav flex-column" aria-label="Main navigation">
+          <a class="nav-link active" aria-current="page" href="home.html"
+            >Home</a
+          >
+          <a class="nav-link" href="index.html">Focus timer</a>
+          <a class="nav-link" href="dashboard.html">Dashboard</a>
+          <a class="nav-link" href="todo.html">To-do list</a>
+          <a class="nav-link" href="reminders.html">Reminders</a>
+          <a class="nav-link" href="session-history.html">Session history</a>
+          <a class="nav-link" href="team.html">Our team</a>
+          <a class="nav-link" href="study-tips.html">Study tips</a>
+          <a class="nav-link" href="reviews.html">Reviews</a>
+          <a class="nav-link" href="contact.html">Contact us</a>
+        </nav>
+      </aside>
+      <main id="main" class="container-fluid workspace">
+        <header class="page-heading">
+          <h1>Hello, <span id="display-name">there</span>!</h1>
+          <p>Welcome to StudySpace.</p>
+        </header>
+        <section class="panel home-panel" aria-labelledby="quick-links-heading">
+          <h2 id="quick-links-heading">What would you like to do?</h2>
+          <ul class="quick-links list-unstyled mb-0">
+            <li>
+              <a href="dashboard.html"
+                >Go to dashboard <span aria-hidden="true">→</span></a
+              >
+            </li>
+            <li>
+              <a href="todo.html"
+                >Go to to-do list <span aria-hidden="true">→</span></a
+              >
+            </li>
+            <li>
+              <a href="index.html"
+                >Open Pomodoro timer <span aria-hidden="true">→</span></a
+              >
+            </li>
+            <li>
+              <a href="reminders.html"
+                >View reminders <span aria-hidden="true">→</span></a
+              >
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
