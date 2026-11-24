@@ -1,57 +1,178 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Study Tips - StudySpace</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Study Tips | StudySpace</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
-  <body class="content-page">
+  <body class="content-page study-tips-page">
     <a href="#main">Skip to content</a>
+    <!-- Navigation "Flower" Button-->
+
     <nav class="menu" aria-label="Site navigation">
-      <button id="toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="links">+</button>
+      <button
+        id="toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="links"
+      >
+        +
+      </button>
+
       <div id="links" inert>
-        <a href="home.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="dashboard.html">Dashboard</a>
-        <a href="index.html">Focus timer</a>
+        <a href="timer.html">Focus timer</a>
         <a href="todo.html">To-do list</a>
         <a href="reminders.html">Reminders</a>
         <a href="session-history.html">Session history</a>
         <a href="team.html">Our team</a>
-        <a aria-current="page" href="study-tips.html">Study tips</a>
+        <a href="study-tips.html" aria-current="page">Study tips</a>
         <a href="reviews.html">Reviews</a>
         <a href="contact.html">Contact us</a>
       </div>
     </nav>
-    <main id="main">
-      <h1>Our Study Advice and Tips</h1>
-      <p>Try one of these tips in your next study session!</p>
-      <div class="card-grid">
-        <section class="session-card">
-          <h2>Firstly, Plan Your Session!</h2>
+
+    <!-- Study tips -->
+    <main id="main" tabindex="-1">
+      <header class="study-tips-hero">
+        <div class="study-tips-intro">
+          <h1>Study Tips</h1>
+          <p>
+            Get started when you’re stuck, remember what you’ve learned, and
+            practise for exams with a clear plan.
+          </p>
+          <a class="study-tips-button" href="timer.html">
+            Open focus timer <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <!-- Study routine -->
+        <section class="study-tips-routine" aria-labelledby="routine-title">
+          <h2 id="routine-title">A 25-minute study plan</h2>
+          <ol>
+            <li>
+              <strong>2 min</strong
+              ><span>Pick one task and write down what done looks like.</span>
+            </li>
+            <li>
+              <strong>18 min</strong
+              ><span
+                >Work on that task and mark anything you get stuck on.</span
+              >
+            </li>
+            <li>
+              <strong>5 min</strong
+              ><span
+                >Close your notes, recall the main points, and write down what
+                to revisit.</span
+              >
+            </li>
+          </ol>
+        </section>
+      </header>
+
+      <div class="study-tips-grid">
+        <section class="study-tips-card" aria-labelledby="start-title">
+          <h2 id="start-title">Get started</h2>
+          <p class="study-tips-description">When the workload feels too big.</p>
+
           <details>
-            <summary>Set one clear goal</summary>
-            <p>Pick something you can finish in one session, like answering five practice questions or outlining one section of an essay.</p>
+            <summary>Make the first step smaller</summary>
+            <p>
+              Turn “revise Python” into “trace one loop by hand.” If that still
+              feels like a lot, start by opening a practice question and writing
+              down what it’s asking.
+            </p>
           </details>
+
           <details>
-            <summary>Study in short blocks</summary>
-            <p>Try 20 minutes on one task, followed by a five-minute break. Keep electronic devices out of sight.</p>
+            <summary>Give yourself a finish line</summary>
+            <p>
+              Choose something you can tick off, like answering five questions
+              or outlining three paragraphs. Add it to your
+              <a href="todo.html">to-do list</a> before you start.
+            </p>
+          </details>
+
+          <details>
+            <summary>Park distractions for later</summary>
+            <p>
+              Keep a scrap of paper beside you. When you remember something
+              unrelated, jot it down and return to your task. Check your list
+              after the session.
+            </p>
           </details>
         </section>
-        <section class="session-card">
-          <h2>How To Revise What You Have Learned</h2>
+
+        <section class="study-tips-card" aria-labelledby="remember-title">
+          <h2 id="remember-title">Remember more</h2>
+          <p class="study-tips-description">
+            When the notes feel familiar but the answers don’t come easily.
+          </p>
+
           <details>
-            <summary>Test yourself from memory</summary>
-            <p>Close your notes and write down the things you remember, Check them against your notes and turn anything you missed into a practice question.</p>
+            <summary>Recall it before you reread it</summary>
+            <p>
+              Close your notes and answer two or three questions from memory.
+              Check your answers, then turn anything you missed into a question
+              for next time.
+            </p>
           </details>
+
           <details>
-            <summary>Spread revision across several days</summary>
-            <p>Set a reminder to revisit the topic tomorrow and again later in the week. Start each review by answering a few questions from memory.</p>
+            <summary>Come back to it later</summary>
+            <p>
+              Set a <a href="reminders.html">reminder</a> to revisit the topic
+              tomorrow and again later in the week. Start each review with a
+              question you found tricky.
+            </p>
           </details>
+
           <details>
-            <summary>Practise with past exam questions</summary>
-            <p>Answer questions under a time limit. Check the marking scheme and add one thing to improve to your to-do list.</p>
+            <summary>Explain it in your own words</summary>
+            <p>
+              Pick a concept and explain it out loud as if a friend missed the
+              lecture. If you get stuck, check that part of your notes and try
+              explaining it again with an example.
+            </p>
+          </details>
+        </section>
+
+        <section class="study-tips-card" aria-labelledby="exam-title">
+          <h2 id="exam-title">Prepare for exams</h2>
+          <p class="study-tips-description">
+            When you’re ready to see what you can do under pressure.
+          </p>
+
+          <details>
+            <summary>Time one past-paper question</summary>
+            <p>
+              Use the marks to decide how much time to give the question. When
+              time’s up, compare your answer with the marking scheme and pick
+              one thing to improve.
+            </p>
+          </details>
+
+          <details>
+            <summary>Keep a short mistake log</summary>
+            <p>
+              Write down what went wrong and what you’ll check next time. For
+              example, “I skipped the empty-list case. Test it before I submit.”
+              Retry the question a few days later.
+            </p>
+          </details>
+
+          <details>
+            <summary>Mix up your practice</summary>
+            <p>
+              Once you’ve practised each topic on its own, try a small set of
+              mixed questions. Before solving each one, say which method you’d
+              use and why.
+            </p>
           </details>
         </section>
       </div>

@@ -1,20 +1,30 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>To-do list | StudySpace</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
   <body data-page="todo">
     <a href="#main">Skip to content</a>
+    <!-- Navigation "Flower" Button-->
+
     <nav class="menu" aria-label="Site navigation">
-      <button id="toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="links">+</button>
+      <button
+        id="toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="links"
+      >
+        +
+      </button>
       <div id="links" inert>
-        <a href="home.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="dashboard.html">Dashboard</a>
-        <a href="index.html">Focus timer</a>
+        <a href="timer.html">Focus timer</a>
         <a aria-current="page" href="todo.html">To-do list</a>
         <a href="reminders.html">Reminders</a>
         <a href="session-history.html">Session history</a>
@@ -27,15 +37,22 @@
     <main id="main">
       <h1>To-do list</h1>
       <section class="session-card task-card" aria-labelledby="tasks-heading">
+        <!-- Add a task -->
         <form id="task-form">
           <label for="task-input">New task</label>
-          <input id="task-input" type="text" placeholder="e.g. Review lecture notes" required>
+          <input
+            id="task-input"
+            type="text"
+            placeholder="e.g. Review lecture notes"
+            required
+          />
           <button type="submit">Add task</button>
         </form>
         <header>
           <h2 id="tasks-heading">Your tasks</h2>
           <p id="task-count" aria-live="polite">0 of 0 done</p>
         </header>
+        <!-- Task list -->
         <ul id="task-list"></ul>
         <p id="task-empty">No tasks yet. Add your first task above.</p>
       </section>

@@ -1,6 +1,7 @@
 (() => {
   "use strict";
 
+  // Shared helpers
   const remindersKey = "reminders-app-items";
   const workCompletionPrefix = "dayplan-work-completion:";
   const byId = (id) => document.getElementById(id);
@@ -33,6 +34,7 @@
     return button;
   }
 
+  // Pomodoro timer
   const pomodoroKey = "dayplan-pomodoro";
   const historyPrefix = "dayplan-session-history:";
 
@@ -225,6 +227,7 @@
     }
   }
 
+  // Weekly totals
   function currentWeekBounds() {
     const weekStart = new Date();
     weekStart.setHours(0, 0, 0, 0);
@@ -248,6 +251,7 @@
     ).length;
   }
 
+  // To-do list
   function initTasks() {
     const key = "todo-tasks";
     const saved = readStorage(key, []);
@@ -315,6 +319,7 @@
     setInterval(updateSummary, 60_000);
   }
 
+  // Reminders
   function readReminders() {
     const saved = readStorage(remindersKey, []);
     return Array.isArray(saved)
@@ -425,6 +430,7 @@
     render();
   }
 
+  // Dashboard stats
   function readWeeklyWorkStats() {
     const [weekStart, nextWeekStart] = currentWeekBounds();
     let completed = 0;
@@ -456,7 +462,8 @@
     const focusMinutes = byId("stat-focus-minutes");
     const weeklyTasks = byId("stat-weekly-tasks");
     const upcomingReminders = byId("stat-upcoming-reminders");
-    if (!sessions && !focusMinutes && !weeklyTasks && !upcomingReminders) return;
+    if (!sessions && !focusMinutes && !weeklyTasks && !upcomingReminders)
+      return;
 
     function render() {
       if (sessions || focusMinutes) {
@@ -493,6 +500,7 @@
     setInterval(render, 60_000);
   }
 
+  // Session history
   function readSessionHistory() {
     const runs = [];
     try {
@@ -545,8 +553,7 @@
         time.textContent = dateFormat.format(run.startedAt);
         const totals = document.createElement("span");
         const label = run.workSessions === 1 ? "work block" : "work blocks";
-        totals.textContent =
-          `${run.workSessions} ${label} completed · ${formatFocusTime(run.focusMs)} focused`;
+        totals.textContent = `${run.workSessions} ${label} completed · ${formatFocusTime(run.focusMs)} focused`;
         row.append(time, totals);
         list.append(row);
       }
@@ -566,6 +573,7 @@
     });
   }
 
+  // Page setup
   const pages = {
     pomodoro: initPomodoro,
     todo: initTasks,
@@ -576,7 +584,7 @@
   initDashboardStats();
 })();
 
-//navbar//
+// Navigation menu
 (() => {
   const toggle = document.querySelector(".menu #toggle");
   const links = document.querySelector(".menu #links");
@@ -584,9 +592,9 @@
 
   const pages = links.querySelectorAll("a");
   pages.forEach((page, index) => {
-    const angle = -180 + index * 180 / (pages.length - 1);
+    const angle = -180 + (index * 180) / (pages.length - 1);
     page.style.setProperty("--desktop-angle", angle + "deg");
-    page.style.setProperty("--mobile-angle", (-180 + (index % 5) * 45) + "deg");
+    page.style.setProperty("--mobile-angle", -180 + (index % 5) * 45 + "deg");
   });
 
   function setOpen(open) {
@@ -603,3 +611,40 @@
     }
   });
 })();
+{
+  // Home clock
+  const homeClock = document.getElementById("home-clock");
+
+  if (homeClock) {
+    const homeDate = document.getElementById("home-date");
+    const homeTime = document.getElementById("home-time");
+
+    const dateFormat = new Intl.DateTimeFormat("en-IE", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+
+    const timeFormat = new Intl.DateTimeFormat("en-IE", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: "h23",
+    });
+
+    const updateHomeClock = () => {
+      const now = new Date();
+      const month = String(now.getMonth() + 1).padStart(2, "0");
+      const day = String(now.getDate()).padStart(2, "0");
+
+      homeDate.textContent = dateFormat.format(now);
+      homeDate.dateTime = `${now.getFullYear()}-${month}-${day}`;
+      homeTime.textContent = timeFormat.format(now);
+      homeTime.dateTime = homeTime.textContent;
+    };
+
+    updateHomeClock();
+    homeClock.hidden = false;
+    window.setInterval(updateHomeClock, 1000);
+  }
+}

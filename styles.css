@@ -1,4 +1,4 @@
-/* Shared page layout */
+/* Shared layout */
 body {
   position: relative;
   box-sizing: border-box;
@@ -11,10 +11,12 @@ body {
     linear-gradient(#0c192729, #0c1927b3),
     #273c50 url("images/alpine-landscape.jpg") center / cover no-repeat;
 }
+
 main {
   width: min(78%, 1200px);
   margin: auto;
 }
+
 h1 {
   margin: 0 0 4.5svh;
   text-align: center;
@@ -22,29 +24,34 @@ h1 {
   font-weight: 550;
   letter-spacing: -0.04em;
 }
+
 button,
 summary {
   cursor: pointer;
 }
+
 button,
 input,
 textarea {
   font: inherit;
 }
+
 body > a[href="#main"] {
   position: absolute;
   top: 8px;
   left: 8px;
   z-index: 5;
   padding: 8px;
+  color: #192f41;
   background: white;
   transform: translateY(-160%);
 }
+
 body > a[href="#main"]:focus {
   transform: none;
 }
 
-/* Circular navigation */
+/* Flower Button */
 .menu {
   --radius: min(40vw, 230px);
   position: absolute;
@@ -53,6 +60,7 @@ body > a[href="#main"]:focus {
   z-index: 2;
   transform: translateX(-50%);
 }
+
 .menu a,
 .menu button {
   display: grid;
@@ -71,6 +79,7 @@ body > a[href="#main"]:focus {
     0 1px 3px #182535,
     0 0 2px #182535;
 }
+
 .menu button {
   position: relative;
   z-index: 1;
@@ -79,9 +88,11 @@ body > a[href="#main"]:focus {
   font-size: 28px;
   transition: transform 160ms;
 }
+
 .menu button:hover {
   transform: scale(1.1);
 }
+
 .menu a {
   --angle: var(--desktop-angle);
   --distance: 0px;
@@ -100,14 +111,17 @@ body > a[href="#main"]:focus {
     transform 180ms,
     opacity 180ms;
 }
+
 #links:not([inert]) a {
   --distance: var(--radius);
   --size: 1;
   opacity: 1;
 }
+
 #links:not([inert]) a:hover {
   --size: 1.1;
 }
+
 .menu :focus-visible {
   outline: 3px solid #405971;
   outline-offset: 2px;
@@ -115,7 +129,8 @@ body > a[href="#main"]:focus {
 
 /* Shared glass cards */
 .session-card,
-.home ul,
+.study-tips-hero,
+.study-tips-card,
 #start,
 #pause,
 #settings-button,
@@ -127,19 +142,23 @@ body > a[href="#main"]:focus {
     inset 0 1px 2px #ffffff50,
     0 8px 25px #0c192c30;
 }
+
 .session-card {
   padding: clamp(18px, 1.7vw, 28px) clamp(20px, 2vw, 33px) 12px;
   border-radius: clamp(20px, 2vw, 32px);
 }
+
 .session-card h2,
 .focus-controls h1 {
   margin: 0;
   font-weight: 550;
   letter-spacing: -0.035em;
 }
+
 .session-card h2 {
   font-size: clamp(21px, 1.65vw, 28px);
 }
+
 .dashboard .session-card,
 .task-card {
   border-color: #ffffff66;
@@ -149,11 +168,33 @@ body > a[href="#main"]:focus {
     0 10px 30px #0c192c40;
 }
 
+.session-card dl {
+  margin: 12px 0 0;
+}
+
+.session-card dl div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.72em 0;
+  font-size: clamp(16px, 1.3vw, 22px);
+}
+
+.session-card dd,
+.content-page blockquote {
+  margin: 0;
+}
+
+.session-card dl div + div,
+.content-page details + details {
+  border-top: 1px solid #ffffff40;
+}
+
 /* Focus timer */
 [data-page="pomodoro"] {
   --timer-height: clamp(210px, 46svh, 560px);
   padding: 0;
 }
+
 [data-page="pomodoro"] main {
   display: grid;
   grid-template-columns: 1fr minmax(260px, 23.5vw);
@@ -165,13 +206,16 @@ body > a[href="#main"]:focus {
   box-sizing: border-box;
   padding: calc(var(--timer-height) + 36px) 4vw max(110px, 14vh) 5vw;
 }
+
 .home .menu,
 [data-page="pomodoro"] .menu {
   bottom: 32px;
 }
+
 [data-page="pomodoro"] .menu button {
   width: clamp(54px, 4.3vw, 72px);
 }
+
 #timer {
   position: absolute;
   top: var(--timer-height);
@@ -197,15 +241,18 @@ body > a[href="#main"]:focus {
   background-clip: text;
   filter: drop-shadow(0 2px 1px #51607e99);
 }
+
 .focus-controls h1 {
   text-align: left;
   font-size: clamp(28px, 2.3vw, 40px);
 }
+
 #session {
   margin: 5px 0 16px;
   color: #e0e6ee;
   font-size: clamp(18px, 1.55vw, 26px);
 }
+
 .timer-status {
   position: absolute;
   width: 1px;
@@ -213,44 +260,53 @@ body > a[href="#main"]:focus {
   overflow: hidden;
   clip-path: inset(50%);
 }
+
 .timer-actions {
   display: flex;
   align-items: center;
   gap: 20px;
 }
+
 [data-page="pomodoro"] main button {
   color: inherit;
 }
+
 .timer-actions button {
   padding: 0.62em 1.55em;
   border-radius: 99px;
   font-size: clamp(18px, 1.5vw, 25px);
   font-weight: 550;
 }
+
 #start,
 #pause {
   background: linear-gradient(165deg, #d3e2ee8a, #8598ab80 55%, #5a6b7d99);
 }
+
 #start::before,
 #pause::before {
   content: "";
   display: inline-block;
   margin-right: 0.55em;
 }
+
 #start::before {
   border-block: 0.37em solid transparent;
   border-left: 0.62em solid white;
 }
+
 #pause::before {
   width: 0.28em;
   height: 0.68em;
   border-inline: 0.14em solid white;
 }
+
 #reset {
   padding-inline: 0.45em;
   border: 0;
   background: transparent;
 }
+
 #settings-button {
   position: absolute;
   top: 3.2vh;
@@ -262,23 +318,7 @@ body > a[href="#main"]:focus {
   border-radius: 50%;
   font-size: 26px;
 }
-.session-card dl {
-  margin: 12px 0 0;
-}
-.session-card dl div {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.72em 0;
-  font-size: clamp(16px, 1.3vw, 22px);
-}
-.session-card dd,
-.content-page blockquote {
-  margin: 0;
-}
-.session-card dl div + div,
-.content-page details + details {
-  border-top: 1px solid #ffffff40;
-}
+
 .cycle-progress {
   color: #e1e8ef;
   font-size: 0.8rem;
@@ -295,23 +335,28 @@ body > a[href="#main"]:focus {
   background: #273d4eed;
   backdrop-filter: blur(18px);
 }
+
 #settings-dialog::backdrop {
   background: #10213180;
 }
+
 #settings-form {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 12px;
 }
+
 #settings-form :is(h2, p) {
   grid-column: 1 / -1;
   margin: 0;
 }
+
 #settings-form input {
   width: 7ch;
   padding: 7px;
 }
+
 #settings-form button {
   padding: 8px 16px;
   border: 1px solid #ffffff55;
@@ -319,42 +364,122 @@ body > a[href="#main"]:focus {
   background: #ffffff20;
 }
 
-/* Home */
+/*  homepage */
+.home .home-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 70px);
+  width: min(100%, 1000px);
+  text-align: left;
+}
+
+.home-welcome {
+  min-width: 0;
+  text-shadow: 0 2px 8px #0c1927b3;
+}
+
+.home .home-welcome h1 {
+  text-align: left;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+}
+
+.home-welcome p {
+  margin: 10px 0 24px;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: #edf5fc;
+}
+
+.home-clock:not([hidden]) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  margin-bottom: 18px;
+  color: #edf5fc;
+  font-size: 0.95rem;
+}
+
+.home-clock time:last-child {
+  padding: 3px 9px;
+  border: 1px solid #ffffff4d;
+  border-radius: 8px;
+  background: #19324666;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.home .home-focus-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  box-sizing: border-box;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 1px solid #ffffff99;
+  border-radius: 14px;
+  background: #e4eff6;
+  color: #192f41;
+  box-shadow: 0 8px 24px #0c192c40;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+.home-play {
+  flex: none;
+  border-block: 6px solid transparent;
+  border-left: 9px solid currentColor;
+}
+
+.home .home-shortcuts {
+  padding: clamp(16px, 3vw, 26px);
+}
+
+.home .home-shortcuts h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 500;
+}
+
+.home .home-shortcuts ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home .home-shortcuts li a::after {
+  flex: none;
+}
+
+.home .home-layout a:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .home .home-layout {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 480px;
+  }
+}
+
 .home {
   display: grid;
   place-items: center;
   padding: 48px 5vw min(calc(42vw + 120px), 350px);
 }
-.home main {
-  width: min(100%, 640px);
-  text-align: center;
-}
-.home h1 {
-  margin: 0;
-  font-size: clamp(44px, 6vw, 80px);
-  font-weight: 700;
-  letter-spacing: -0.055em;
-}
-.home main > p {
-  margin: 4px 0 32px;
-  font-size: clamp(18px, 2vw, 24px);
-}
-.home h2 {
-  margin: 0 0 12px;
-  font-size: 1rem;
-  font-weight: 500;
-}
-.home ul {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin: 0;
-  padding: 14px;
-  list-style: none;
-  border-radius: 24px;
-}
+
 .home li a,
-.reminder-link {
+.reminder-link,
+.contact-shortcuts a {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -363,12 +488,14 @@ body > a[href="#main"]:focus {
   color: white;
   text-decoration: none;
 }
+
 .home li a {
   justify-content: space-between;
   padding: 16px;
   background: #ffffff18;
   text-align: left;
 }
+
 .home li a::after {
   content: "";
   width: 7px;
@@ -377,6 +504,7 @@ body > a[href="#main"]:focus {
   border-width: 1.5px 1.5px 0 0;
   transform: rotate(45deg);
 }
+
 .home li a:is(:hover, :focus-visible),
 .reminder-link:hover {
   background: #ffffff38;
@@ -391,27 +519,33 @@ body > a[href="#main"]:focus {
   min-height: 55svh;
   padding: clamp(16px, 3.6svh, 42px);
 }
+
 .dashboard h2 {
   font-size: clamp(22px, 5svh, 48px);
 }
+
 .stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
 }
+
 .stats p {
   margin: 0;
   font-size: clamp(16px, 3.8svh, 32px);
 }
+
 .stats p + p {
   border-left: 1px solid #ffffff70;
 }
+
 .stats strong {
   display: block;
   font-size: clamp(40px, 10svh, 100px);
   font-weight: 600;
   line-height: 1.1;
 }
+
 .reminder-link {
   gap: 0.7em;
   padding: 0.65em 1em;
@@ -419,49 +553,59 @@ body > a[href="#main"]:focus {
   box-shadow: inset 0 1px 1px #ffffff55;
   font-size: clamp(16px, 3.4svh, 28px);
 }
+
 .reminder-link svg {
   width: 1.4em;
   flex: none;
 }
+
 .reminder-link span:last-child {
   margin-left: auto;
   font-size: 1.4em;
 }
 
-/* Tasks, reminders and contact form */
+/* Tasks and reminders */
 .task-card {
   padding: clamp(18px, 3.6svh, 42px);
 }
+
 .task-card form {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 8px 12px;
 }
+
 .task-card form label {
   font-weight: 550;
 }
+
 #task-form label,
 #reminder-form button {
   grid-column: 1 / -1;
 }
+
 .task-card form :is(input, textarea, button),
 .task-card .remove {
   padding: 11px 16px;
   border: 1px solid #ffffff66;
   border-radius: 14px;
 }
+
 .task-card form :is(input, textarea) {
   min-width: 0;
   color: white;
   background: #19324666;
 }
+
 .task-card form input::placeholder {
   color: #e2e9ef;
 }
+
 .task-card button {
   color: #192f41;
   background: #e4eff6;
 }
+
 .task-card header,
 .task-card li,
 .task-label,
@@ -470,135 +614,544 @@ body > a[href="#main"]:focus {
   align-items: center;
   gap: 12px;
 }
+
 .task-card header {
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 26px 0 10px;
 }
+
 #task-count,
 #reminder-count {
   margin: 0;
   font-size: 0.9rem;
 }
+
 .task-card ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 .task-card li {
   justify-content: space-between;
   padding: 12px 0;
   border-top: 1px solid #ffffff40;
 }
+
 .task-card .remove {
   padding: 7px 12px;
   color: white;
   background: #20364b55;
 }
+
 #task-empty,
 #reminder-empty {
   margin-bottom: 0;
 }
+
 .task-label {
   min-width: 0;
   overflow-wrap: anywhere;
   cursor: pointer;
 }
+
 .task-label input {
   width: 20px;
   height: 20px;
   flex: none;
   accent-color: #305a71;
 }
+
 .task-label input:checked + span {
   color: #d2dfe7;
   text-decoration: line-through;
 }
+
 #reminder-form label {
   display: grid;
   gap: 8px;
 }
+
 #reminder-date {
   color-scheme: dark;
 }
+
 .content-page main > p,
 [data-page="reminders"] main > p {
   text-align: center;
 }
+
 .reminder-name {
   margin: 0 0 4px;
   overflow-wrap: anywhere;
 }
+
 .reminder-meta {
   flex-wrap: wrap;
   gap: 8px;
   font-size: 0.9rem;
 }
+
 .due-status {
   padding: 3px 9px;
   border-radius: 12px;
   background: #19324666;
 }
+
 .due-status.overdue {
   background: #702d3c;
 }
+
 .due-status.soon {
   background: #36576c;
 }
-#contact-form {
-  grid-template-columns: 1fr;
-}
-#contact-form p {
-  display: grid;
-  gap: 6px;
-  margin: 0;
-}
-#contact-form textarea {
-  resize: vertical;
-}
 
-/* Reviews, tips, team and history */
+/* Reviews and session history */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 16px;
 }
+
 .content-page summary {
   padding: 12px 0;
 }
-.team-card img {
-  display: block;
-  max-width: 100%;
-  margin: 0 auto 12px;
-  border-radius: 14px;
+
+.review-stars {
+  display: inline-block;
+  color: #ffe08a;
+  font-size: 1.25rem;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
 }
+
 #history-list li {
   flex-wrap: wrap;
 }
 
+/* Meet the Team */
+.session-card.team-card {
+  max-width: 740px;
+  margin: 24px auto 0;
+  padding: clamp(8px, 1.5vw, 16px);
+}
+
+.team-card details {
+  --icon-tint: #8bcaff4a;
+}
+
+.team-card details:nth-child(2) {
+  --icon-tint: #95e0d24a;
+}
+
+.team-card details:nth-child(3) {
+  --icon-tint: #c1adff4a;
+}
+
+.team-card details > summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(10px, 2.5vw, 20px);
+  padding: clamp(10px, 2vw, 16px);
+  border-radius: 16px;
+  list-style: none;
+  transition: background-color 160ms ease;
+}
+
+.team-card summary::-webkit-details-marker,
+.study-tips-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.team-card summary::marker,
+.study-tips-card summary::marker {
+  content: "";
+}
+
+.team-card summary:hover,
+.team-card details[open] > summary,
+.study-tips-card summary:hover,
+.study-tips-card details[open] > summary {
+  background-color: #ffffff18;
+}
+
+.team-card summary:focus-visible {
+  outline: 2px solid white;
+  outline-offset: -2px;
+}
+
+.team-card summary::after,
+.study-tips-card summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-inline-end: 4px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.team-card details[open] > summary::after,
+.study-tips-card details[open] > summary::after {
+  transform: rotate(225deg);
+}
+
+.team-card .team-icon {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: clamp(46px, 7vw, 62px);
+  aspect-ratio: 1;
+  border: 1px solid #ffffff55;
+  border-radius: 15px;
+  background: linear-gradient(145deg, var(--icon-tint), #192f4b85);
+  box-shadow:
+    inset 0 1px 1px #ffffff45,
+    0 4px 12px #0c192c30;
+}
+
+.team-card .team-icon img {
+  display: block;
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1) drop-shadow(0 1px 2px #10213155);
+}
+
+.team-card .team-identity {
+  display: grid;
+  gap: 4px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.team-card .team-identity strong {
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  font-weight: 650;
+}
+
+.team-card .team-identity > span {
+  color: #edf5fc;
+  font-size: clamp(0.85rem, 1.8vw, 1rem);
+}
+
+.team-card .team-bio {
+  padding: 12px clamp(10px, 2vw, 16px) 20px;
+  line-height: 1.6;
+}
+
+.team-card .team-bio p {
+  margin: 0;
+}
+
+.team-card .team-bio p + p {
+  margin-top: 4px;
+}
+
+/* Study Tips */
+.study-tips-page {
+  padding-top: clamp(24px, 5svh, 56px);
+}
+
+.study-tips-page main {
+  width: min(92%, 1080px);
+}
+
+.study-tips-hero,
+.study-tips-card {
+  min-width: 0;
+  border-radius: 24px;
+}
+
+.study-tips-hero {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(18px, 4vw, 44px);
+  margin-bottom: 18px;
+  padding: clamp(18px, 3vw, 32px);
+}
+
+.study-tips-page h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 1.05;
+  text-align: left;
+}
+
+.study-tips-intro p {
+  max-width: 38ch;
+  margin: 0 0 20px;
+  color: #edf5fc;
+  line-height: 1.6;
+}
+
+.study-tips-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid #ffffff66;
+  border-radius: 14px;
+  background: #e4eff6;
+  color: #192f41;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.home .home-focus-button:hover,
+.study-tips-button:hover,
+.contact-page #contact-form button:hover {
+  background: white;
+}
+
+.study-tips-routine {
+  padding: clamp(14px, 2.5vw, 22px);
+  border: 1px solid #ffffff40;
+  border-radius: 18px;
+  background: #19324699;
+}
+
+.study-tips-routine h2,
+.study-tips-card h2 {
+  margin: 0;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.study-tips-routine ol {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.study-tips-routine li {
+  display: grid;
+  grid-template-columns: 3.6rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 10px;
+  color: #edf5fc;
+  line-height: 1.45;
+}
+
+.study-tips-routine li strong {
+  color: white;
+  font-variant-numeric: tabular-nums;
+}
+
+.study-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+}
+
+.study-tips-card {
+  padding: clamp(16px, 2vw, 24px);
+}
+
+.study-tips-description {
+  min-height: 3em;
+  margin: 6px 0 14px;
+  color: #edf5fc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.study-tips-card details {
+  border-top: 1px solid #ffffff40;
+}
+
+.study-tips-card details > summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 10px 4px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  list-style: none;
+}
+
+.study-tips-card summary::after {
+  width: 7px;
+  height: 7px;
+}
+
+.study-tips-card details > p {
+  margin: 0;
+  padding: 10px 4px 14px;
+  color: #edf5fc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.study-tips-card details a {
+  color: white;
+  text-underline-offset: 3px;
+}
+
+/* Contact page */
+.contact-page main {
+  width: min(92%, 960px);
+}
+
+.contact-heading {
+  margin: 0 auto clamp(20px, 4vw, 38px);
+  text-align: center;
+}
+
+.contact-heading h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.contact-heading p {
+  max-width: 48ch;
+  margin: 0 auto;
+  line-height: 1.55;
+  text-shadow: 0 1px 4px #182535;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  align-items: start;
+  gap: 16px;
+}
+
+.contact-page .contact-shortcuts,
+.contact-page .contact-message-card {
+  min-width: 0;
+  padding: clamp(18px, 3vw, 30px);
+}
+
+.contact-shortcuts ul {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-shortcuts a {
+  justify-content: space-between;
+  padding: 11px 12px;
+  background: #19324666;
+  line-height: 1.4;
+}
+
+.contact-shortcuts a:hover {
+  background: #193246a6;
+}
+
+#contact-form {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.contact-page #contact-form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+#contact-form p {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+}
+
+#contact-form textarea {
+  resize: vertical;
+}
+
+#contact-form .contact-message-field,
+.contact-page #contact-form button {
+  grid-column: 1 / -1;
+}
+
+#contact-form small {
+  color: #f0f6fb;
+  line-height: 1.45;
+}
+
+.contact-page #contact-form button {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 12px;
+  min-height: 44px;
+  font-weight: 650;
+}
+
+.contact-page #contact-status {
+  margin: 0;
+}
+
+.contact-page #contact-status:not(:empty) {
+  margin-top: 14px;
+}
+
+.study-tips-page main :is(a, summary):focus-visible,
+.contact-page main :is(a, input, textarea, button):focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
 /* Small screens and reduced motion */
+@media (max-width: 760px) {
+  .study-tips-hero,
+  .study-tips-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .study-tips-description {
+    min-height: 0;
+  }
+}
+
 @media (max-width: 700px) {
   [data-page="pomodoro"] main {
     grid-template-columns: 1fr;
     gap: 24px;
     padding: calc(var(--timer-height) + 24px) 6vw 130px;
   }
+
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
+
 @media (max-width: 600px) {
   main {
     width: 92%;
   }
+
   .dashboard .session-card {
     min-height: 340px;
   }
+
   .stats strong {
     font-size: 44px;
   }
+
   .stats p,
   .reminder-link {
     font-size: 16px;
   }
 }
+
 @media (max-width: 500px) {
   .menu a {
     --angle: var(--mobile-angle);
@@ -606,23 +1159,84 @@ body > a[href="#main"]:focus {
     width: min(15.5vw, 64px);
     font-size: clamp(10px, 3vw, 12px);
   }
+
   .menu a:nth-child(-n + 5) {
     --radius: 21.5vw;
   }
 }
+
 @media (max-width: 480px) {
-  .home ul {
-    grid-template-columns: 1fr;
+  .contact-page #contact-form {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
+
 @media (max-width: 420px) {
   .task-card form {
     grid-template-columns: 1fr;
   }
 }
+
 @media (prefers-reduced-motion: reduce) {
   .menu a,
-  .menu button {
+  .menu button,
+  .team-card details > summary {
     transition: none;
+  }
+}
+
+/* Scrollable Reminders and To-do lists */
+body:is([data-page="reminders"], :has(#task-form)) {
+  isolation: isolate;
+  background: #273c50;
+}
+
+body:is([data-page="reminders"], :has(#task-form))::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(#0c192729, #0c1927b3),
+    url("images/alpine-landscape.jpg") center / cover no-repeat;
+}
+
+body:is([data-page="reminders"], :has(#task-form)) .task-card ul {
+  max-height: min(36svh, 24rem);
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-gutter: stable;
+  padding-inline-end: 8px;
+}
+
+@media (min-width: 701px) {
+  body.home {
+    min-height: 100svh;
+    padding: 112px 5vw;
+  }
+
+  .home .home-layout {
+    width: min(100%, 1160px);
+  }
+
+  .home .home-welcome h1 {
+    font-size: clamp(3rem, 7vw, 6.25rem);
+  }
+
+  .home .home-welcome p {
+    margin: 14px 0 28px;
+    font-size: clamp(1.25rem, 2.5vw, 1.85rem);
+  }
+
+  .home .home-clock {
+    margin-bottom: 22px;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+  }
+
+  .home .home-focus-button {
+    min-height: 56px;
+    padding: 14px 24px;
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
   }
 }

@@ -1,48 +1,108 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Meet the Team | StudySpace</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
   <body class="content-page">
     <a href="#main">Skip to content</a>
+    <!-- Navigation "Flower" Button-->
+
     <nav class="menu" aria-label="Site navigation">
-      <button id="toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="links">+</button>
+      <button
+        id="toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="links"
+      >
+        +
+      </button>
+
       <div id="links" inert>
-        <a href="home.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="dashboard.html">Dashboard</a>
-        <a href="index.html">Focus timer</a>
+        <a href="timer.html">Focus timer</a>
         <a href="todo.html">To-do list</a>
         <a href="reminders.html">Reminders</a>
         <a href="session-history.html">Session history</a>
-        <a aria-current="page" href="team.html">Our team</a>
+        <a href="team.html" aria-current="page">Our team</a>
         <a href="study-tips.html">Study tips</a>
         <a href="reviews.html">Reviews</a>
         <a href="contact.html">Contact us</a>
       </div>
     </nav>
+
+    <!-- Team members -->
     <main id="main">
       <h1>Meet the Team</h1>
       <p>We’re the student developers behind StudySpace.</p>
+
       <div class="session-card team-card">
-        <img src="images/team.png" alt="Antonina Brychcy, William Downey, and Conor McCarthy, the StudySpace team" width="300">
         <details>
-          <summary>Conor McCarthy Analytics &amp; Progress Tracking</summary>
-          <p>Co-founder</p>
-          <p>Conor oversees how StudySpace presents study activity and progress. He developed the dashboard and session history, giving students a clear view of their study time and a record of their past focus sessions.</p>
+          <summary>
+            <span class="team-icon">
+              <img src="images/analytics.png" alt="" width="36" height="36" />
+            </span>
+            <span class="team-identity">
+              <strong>Conor McCarthy</strong>
+              <span>Analytics &amp; Progress Tracking</span>
+            </span>
+          </summary>
+          <div class="team-bio">
+            <p><strong>Co-founder</strong></p>
+            <p>
+              Conor oversees how StudySpace presents study activity and
+              progress. He developed the dashboard and session history, giving
+              students a clear view of their study time and a record of their
+              past focus sessions.
+            </p>
+          </div>
         </details>
+
         <details>
-          <summary>William Downey Account Experience &amp; User Support</summary>
-          <p>Co-founder</p>
-          <p>William oversees the account experience and user support at StudySpace. He developed the login, sign-up, and settings pages, as well as the Contact Us and Help page, so students can manage their accounts and access support in one place.</p>
+          <summary>
+            <span class="team-icon">
+              <img src="images/user.png" alt="" width="36" height="36" />
+            </span>
+            <span class="team-identity">
+              <strong>William Downey</strong>
+              <span>Account Experience &amp; User Support</span>
+            </span>
+          </summary>
+          <div class="team-bio">
+            <p><strong>Co-founder</strong></p>
+            <p>
+              William oversees the account experience and user support at
+              StudySpace. He developed the login, sign-up, and settings pages,
+              as well as the Contact Us and Help page, so students can manage
+              their accounts and access support in one place.
+            </p>
+          </div>
         </details>
+
         <details>
-          <summary>Antonina Brychcy Product Design &amp; Front-End Development</summary>
-          <p>Co-founder</p>
-          <p>Antonina oversees the design of StudySpace’s homepage and team page. She developed the homepage around the tools students use most and created the team page to introduce the people behind the platform.</p>
+          <summary>
+            <span class="team-icon">
+              <img src="images/product.png" alt="" width="36" height="36" />
+            </span>
+            <span class="team-identity">
+              <strong>Antonina Brychcy</strong>
+              <span>Product Design &amp; Front-End Development</span>
+            </span>
+          </summary>
+          <div class="team-bio">
+            <p><strong>Co-founder</strong></p>
+            <p>
+              Antonina oversees the design of StudySpace’s homepage and team
+              page. She developed the homepage around the tools students use
+              most and created the team page to introduce the people behind the
+              platform.
+            </p>
+          </div>
         </details>
       </div>
     </main>

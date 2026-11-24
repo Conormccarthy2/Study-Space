@@ -1,43 +1,134 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact Us - StudySpace</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us | StudySpace</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
     <script src="help.js" defer></script>
   </head>
-  <body class="content-page">
+  <body class="content-page contact-page">
     <a href="#main">Skip to content</a>
+    <!-- Navigation "Flower" Button-->
+
     <nav class="menu" aria-label="Site navigation">
-      <button id="toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="links">+</button>
+      <button
+        id="toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="links"
+      >
+        +
+      </button>
       <div id="links" inert>
-        <a href="home.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="dashboard.html">Dashboard</a>
-        <a href="index.html">Focus timer</a>
+        <a href="timer.html">Focus timer</a>
         <a href="todo.html">To-do list</a>
         <a href="reminders.html">Reminders</a>
         <a href="session-history.html">Session history</a>
         <a href="team.html">Our team</a>
         <a href="study-tips.html">Study tips</a>
         <a href="reviews.html">Reviews</a>
-        <a aria-current="page" href="contact.html">Contact us</a>
+        <a href="contact.html" aria-current="page">Contact us</a>
       </div>
     </nav>
-    <main id="main">
-      <h1>Contact Us</h1>
-      <section class="session-card task-card">
-        <h2>Contact Our Team Below</h2>
-        <p>Have a question? Fill in the form below to contact us.</p>
-        <form id="contact-form">
-          <p><label for="contact-name">Name</label> <input id="contact-name" name="name" autocomplete="name" maxlength="60" required></p>
-          <p><label for="contact-email">Email</label> <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></p>
-          <p><label for="contact-message">Message</label> <textarea id="contact-message" name="message" rows="5" maxlength="500" required></textarea></p>
-          <button type="submit">Send message</button>
-        </form>
-        <p id="contact-status" role="status"></p>
-      </section>
+
+    <!-- Contact details -->
+    <main id="main" tabindex="-1">
+      <header class="contact-heading">
+        <h1>Contact us</h1>
+        <p>
+          Found a bug, got a question, or have an idea for StudySpace? Tell us
+          about it.
+        </p>
+      </header>
+
+      <div class="contact-layout">
+        <aside
+          class="session-card contact-shortcuts"
+          aria-labelledby="contact-shortcuts-title"
+        >
+          <h2 id="contact-shortcuts-title">Quick help</h2>
+          <ul>
+            <li>
+              <a href="session-history.html">
+                <span>Find a past focus session</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="reminders.html">
+                <span>Manage your reminders</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="study-tips.html">
+                <span>Plan your next study session</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <section
+          class="session-card task-card contact-message-card"
+          aria-labelledby="contact-message-title"
+        >
+          <h2 id="contact-message-title">Send us a message</h2>
+
+          <!-- Contact form -->
+          <form id="contact-form">
+            <p>
+              <label for="contact-name">Name</label>
+              <input
+                id="contact-name"
+                name="name"
+                autocomplete="name"
+                maxlength="60"
+                required
+              />
+            </p>
+
+            <p>
+              <label for="contact-email">Email</label>
+              <input
+                id="contact-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              />
+            </p>
+
+            <p class="contact-message-field">
+              <label for="contact-message">Message</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                rows="5"
+                maxlength="500"
+                aria-describedby="contact-message-hint"
+                required
+              ></textarea>
+              <small id="contact-message-hint">
+                Reporting a bug? Include the page and what happened. Up to 500
+                characters.
+              </small>
+            </p>
+
+            <button type="submit">
+              Send message <span aria-hidden="true">→</span>
+            </button>
+          </form>
+
+          <p id="contact-status" role="status"></p>
+        </section>
+      </div>
     </main>
   </body>
 </html>

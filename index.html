@@ -1,20 +1,31 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Focus timer | StudySpace</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home | StudySpace</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
-  <body data-page="pomodoro">
+  <body class="home">
     <a href="#main">Skip to content</a>
+    <!-- Navigation "Flower" Button-->
+
     <nav class="menu" aria-label="Site navigation">
-      <button id="toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="links">+</button>
+      <button
+        id="toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="links"
+      >
+        +
+      </button>
+
       <div id="links" inert>
-        <a href="home.html">Home</a>
+        <a href="index.html" aria-current="page">Home</a>
         <a href="dashboard.html">Dashboard</a>
-        <a aria-current="page" href="index.html">Focus timer</a>
+        <a href="timer.html">Focus timer</a>
         <a href="todo.html">To-do list</a>
         <a href="reminders.html">Reminders</a>
         <a href="session-history.html">Session history</a>
@@ -24,46 +35,36 @@
         <a href="contact.html">Contact us</a>
       </div>
     </nav>
-    <main id="main">
-      <button id="settings-button" type="button" aria-label="Settings" title="Settings">⚙</button>
-      <span id="timer" role="timer" aria-label="Time remaining">20:00</span>
-      <section class="focus-controls" aria-labelledby="focus-heading">
-        <h1 id="focus-heading">Focus timer</h1>
-        <p id="session" aria-live="polite">Work session</p>
-        <span id="timer-status" class="timer-status" role="status">Ready to start</span>
-        <div class="timer-actions">
-          <button id="start" type="button">Start</button>
-          <button id="pause" type="button" hidden>Pause</button>
-          <button id="reset" type="button">Reset</button>
+
+    <main id="main" class="home-layout" tabindex="-1">
+      <header class="home-welcome">
+        <!-- Home clock -->
+        <div class="home-clock" id="home-clock" hidden>
+          <time id="home-date"></time>
+          <time id="home-time"></time>
         </div>
+
+        <h1>Hello, <span id="display-name">there</span>!</h1>
+        <p>Welcome to StudySpace.</p>
+
+        <a class="home-focus-button" href="timer.html">
+          <span class="home-play" aria-hidden="true"></span>
+          Start a focus session
+        </a>
+      </header>
+
+      <!-- Quick links -->
+      <section
+        class="session-card home-shortcuts"
+        aria-labelledby="quick-links-heading"
+      >
+        <h2 id="quick-links-heading">What would you like to do?</h2>
+        <ul>
+          <li><a href="dashboard.html">Go to dashboard</a></li>
+          <li><a href="todo.html">Go to to-do list</a></li>
+          <li><a href="reminders.html">View reminders</a></li>
+        </ul>
       </section>
-      <section class="session-card" aria-labelledby="cycle-heading">
-        <h2 id="cycle-heading">Session cycle</h2>
-        <dl>
-          <div><dt>Work</dt><dd id="work-duration">20 min</dd></div>
-          <div><dt>Short break</dt><dd id="short-duration">3 min</dd></div>
-          <div><dt>Long break</dt><dd id="long-duration">5 min</dd></div>
-        </dl>
-        <details class="cycle-progress">
-          <summary>Session progress</summary>
-          <p><span id="completed-sessions" aria-live="polite">0</span> work sessions completed</p>
-          <p>A long break follows every fourth work session.</p>
-        </details>
-      </section>
-      <dialog id="settings-dialog" aria-labelledby="settings-heading">
-        <form id="settings-form">
-          <h2 id="settings-heading">Session lengths</h2>
-          <p>Saving resets the current session to its new duration.</p>
-          <label for="settings-work">Work (minutes)</label>
-          <input id="settings-work" name="work" type="number" min="1" max="1440" required>
-          <label for="settings-short">Short break (minutes)</label>
-          <input id="settings-short" name="short" type="number" min="1" max="1440" required>
-          <label for="settings-long">Long break (minutes)</label>
-          <input id="settings-long" name="long" type="number" min="1" max="1440" required>
-          <button id="close-settings" type="button">Cancel</button>
-          <button type="submit">Save settings</button>
-        </form>
-      </dialog>
     </main>
   </body>
 </html>

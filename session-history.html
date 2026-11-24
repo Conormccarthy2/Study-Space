@@ -1,20 +1,30 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Session history | StudySpace</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
   <body class="content-page" data-page="history">
     <a href="#main">Skip to content</a>
+    <!-- Navigation "Flower" Button-->
+
     <nav class="menu" aria-label="Site navigation">
-      <button id="toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="links">+</button>
+      <button
+        id="toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="links"
+      >
+        +
+      </button>
       <div id="links" inert>
-        <a href="home.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="dashboard.html">Dashboard</a>
-        <a href="index.html">Focus timer</a>
+        <a href="timer.html">Focus timer</a>
         <a href="todo.html">To-do list</a>
         <a href="reminders.html">Reminders</a>
         <a aria-current="page" href="session-history.html">Session history</a>
@@ -28,8 +38,11 @@
       <h1>Session history</h1>
       <section class="session-card task-card">
         <h2 id="history-heading">Timer runs</h2>
+        <!-- Past timer sessions -->
         <ul id="history-list"></ul>
-        <p id="history-empty">Start the focus timer to record your first run.</p>
+        <p id="history-empty">
+          Start the focus timer to record your first run.
+        </p>
       </section>
     </main>
   </body>

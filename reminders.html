@@ -9,6 +9,8 @@
   </head>
   <body data-page="reminders">
     <a href="#main">Skip to content</a>
+    <!-- Navigation "Flower" Button-->
+
     <nav class="menu" aria-label="Site navigation">
       <button
         id="toggle"
@@ -16,13 +18,11 @@
         aria-label="Toggle navigation"
         aria-expanded="false"
         aria-controls="links"
-      >
-        +
-      </button>
+      ></button>
       <div id="links" inert>
-        <a href="home.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="dashboard.html">Dashboard</a>
-        <a href="index.html">Focus timer</a>
+        <a href="timer.html">Focus timer</a>
         <a href="todo.html">To-do list</a>
         <a aria-current="page" href="reminders.html">Reminders</a>
         <a href="session-history.html">Session history</a>
@@ -36,15 +36,24 @@
       <h1>Reminders</h1>
       <p>Keep upcoming dates and deadlines in one place.</p>
       <p id="today"></p>
-      <section class="session-card task-card" aria-labelledby="reminders-heading">
+      <section
+        class="session-card task-card"
+        aria-labelledby="reminders-heading"
+      >
+        <!-- Add a reminder -->
         <form id="reminder-form">
           <label for="reminder-name">
             Reminder
-            <input id="reminder-name" type="text" placeholder="e.g. Submit project" required>
+            <input
+              id="reminder-name"
+              type="text"
+              placeholder="e.g. Submit project"
+              required
+            />
           </label>
           <label for="reminder-date">
             Due date
-            <input id="reminder-date" type="date" required>
+            <input id="reminder-date" type="date" required />
           </label>
           <button type="submit">Add reminder</button>
         </form>
@@ -52,6 +61,7 @@
           <h2 id="reminders-heading">Your reminders</h2>
           <p id="reminder-count" aria-live="polite">0 reminders</p>
         </header>
+        <!-- Reminder list -->
         <ul id="reminder-list"></ul>
         <p id="reminder-empty">
           No reminders yet. Add a reminder and its due date above.
